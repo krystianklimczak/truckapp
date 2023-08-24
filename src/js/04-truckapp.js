@@ -31,3 +31,5 @@ button.addEventListener('click', e => {
     `Ilość przepracowanych godzin: ${hoursCount}, ilość przepracowanych minut ${minCount}`
   );
 });
+
+console.log('123')
