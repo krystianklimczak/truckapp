@@ -22,14 +22,19 @@ form.addEventListener('input', e => {
 
 button.addEventListener('click', e => {
   e.preventDefault();
+
   let minCount = (workEndDate - workStartDate) / 60000;
-  if (minCount > 60) {
+  if (minCount < 0) {
+    minCount += 1440;
+  }
+  if (minCount >= 60) {
     minCount = minCount % 60;
   }
   let hoursCount = Math.floor((workEndDate - workStartDate) / 3600000);
+  if (hoursCount < 0) {
+    hoursCount += 24;
+  }
   alert(
     `Ilość przepracowanych godzin: ${hoursCount}, ilość przepracowanych minut ${minCount}`
   );
 });
-
-console.log('123')
